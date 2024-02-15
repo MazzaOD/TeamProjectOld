@@ -1,0 +1,44 @@
+<!-- addAppointment.handlebars -->
+
+{{!< layouts/main}}
+
+<section class="add-form">
+    <div class="container">
+        <h2>Add Appointment</h2>
+        <form action="/add-appointment" method="post">
+            <div class="mb-3">
+                <label for="dentistId" class="form-label">Dentist</label>
+                <select class="form-select" id="dentistId" name="dentistId" required>
+                    {{#each dentists}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="clientId" class="form-label">Client</label>
+                <select class="form-select" id="clientId" name="clientId" required>
+                    {{#each clients}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="treatmentId" class="form-label">Treatment</label>
+                <select class="form-select" id="treatmentId" name="treatmentId" required>
+                    {{#each treatments}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="time" class="form-control" id="time" name="time" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Appointment</button>
+        </form>
+    </div>
+</section>

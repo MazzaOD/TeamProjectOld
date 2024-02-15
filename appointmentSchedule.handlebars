@@ -1,0 +1,33 @@
+<!-- appointmentSchedule.handlebars -->
+
+{{!< layouts/main}}
+
+<section class="appointment-schedule">
+    <div class="container">
+        <h2>Appointment Schedule</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered text-black mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Dentist</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Treatment</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each appointments}}
+                    <tr>
+                        <td>{{dentistName}}</td>
+                        <td>{{clientName}}</td>
+                        <td>{{treatmentName}}</td>
+                        <td>{{date}}</td>
+                        <td>{{time}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
